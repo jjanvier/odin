@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  odin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - ./rendered:/app/rendered
+      - /app/vendor
+    environment:
+      - ODIN_RENDER_DIR=/app/rendered
+    tty: true
